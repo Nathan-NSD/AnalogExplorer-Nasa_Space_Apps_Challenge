@@ -1,0 +1,10 @@
+# Streamlit settings, read locally and by Streamlit Community Cloud (display only: no effect on results).
+[client]
+# Viewers see the app, not the developer menu ("Deploy", "Clear cache"). Locally, restart the server instead.
+toolbarMode = "viewer"
+
+[theme]
+base = "light"
+primaryColor = "#2F6FDE"            # same blue as the candidate sites in the charts (src/charts.py, BLUE)
+textColor = "#1B2430"               # same ink as the charts (INK)
+secondaryBackgroundColor = "#EEF2F7"

@@ -1,0 +1,8 @@
+target_id,name,body,lat,lon,note
+moon_shackleton,Shackleton Crater region (South Pole),Moon,-89.67,129.78,"IAU Gazetteer centre of Shackleton crater. The window of about 110 km holds its permanently shadowed floor, its rim and the ridge toward de Gerlache: a regional profile, not the rim alone. 'Peak near Shackleton' and 'Connecting Ridge' were among NASA's 13 Artemis III candidate regions of 2022; the list of nine of October 2024 no longer names them."
+moon_malapert,Malapert Massif (South Pole),Moon,-85.98,-1.67,IAU Gazetteer centre of Mons Malapert (LOLA 2011 network). 'Malapert Massif' is one of NASA's nine Artemis III candidate regions (October 2024).
+moon_mare_tranq_pit,Mare Tranquillitatis pit,Moon,8.335,33.222,Pit coordinates from Robinson et al. (2012).
+mars_jezero,Jezero Crater,Mars,18.38,77.58,IAU Gazetteer centre; Perseverance landing region.
+mars_gale,Gale Crater,Mars,-5.37,137.81,IAU Gazetteer centre; Curiosity landing region.
+mars_arcadia,Arcadia Planitia (ice-rich mid-latitudes),Mars,46.0,-166.0,"Approximate centre of the ice-rich zone mapped by SHARAD (Bramson et al. 2015). Future site: studied for human landings (ice as a resource), no mission selected."
+mars_oxia,Oxia Planum (Rosalind Franklin landing site),Mars,18.275,-24.632,"Future site of another agency: landing site of ESA's ExoMars Rosalind Franklin rover (launch planned in 2028), clay-bearing plains (Quantin-Nataf et al. 2021, Astrobiology 21(3); Fawdon et al. 2024, Journal of Maps). Coordinates 18.275 N, 335.368 E."

@@ -1,0 +1,19 @@
+# Project metadata and tool settings (dependencies stay pinned in requirements.txt).
+[project]
+name = "analogexplorer"
+version = "0.3.0"
+description = "Earth analogs of Moon and Mars sites (NASA Space Apps 2026)"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["data"]
+
+[tool.ruff.lint]
+# pycodestyle, pyflakes, isort, bugbear, pyupgrade, simplify, numpy and pandas rules.
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "NPY", "PD"]
+ignore = ["SIM300"]  # flags `S >= tau` as a Yoda condition: S and T are similarity matrices, not constants

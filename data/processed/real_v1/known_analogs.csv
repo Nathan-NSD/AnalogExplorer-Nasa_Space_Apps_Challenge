@@ -1,0 +1,30 @@
+name,lat,lon,relevant_to,tested_mars,tested_moon,extent_km,source
+Atacama Desert (hyperarid core),-24.5,-69.25,Mars,aridity,,300.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role (hyperaridity): Azua-Bustos et al. 2022; Preston & Dartnell 2014 (Int. J. Astrobiology).
+McMurdo Dry Valleys,-77.4667,162.5167,Moon;Mars,aridity|ice_proxy|temp_min_k,,70.0,"Coordinates: Wikipedia. Role (cold hyperarid polar desert, permafrost): Marchant & Head 2007; Preston & Dartnell 2014 (Int. J. Astrobiology)."
+Beacon Valley (Antarctica),-77.8167,160.65,Mars,aridity|ice_proxy|temp_min_k,,15.0,"Coordinates: Wikipedia. Role (cold desert, buried ice): Preston & Dartnell 2014 (Int. J. Astrobiology)."
+Haughton Crater (Devon Island),75.3833,-89.6667,Moon;Mars,ice_proxy|temp_min_k,Topography,23.0,"Coordinates: Wikipedia 'Terrestrial analogue site' table. Role (polar desert, ground ice; impact crater): Preston & Dartnell 2014 (Int. J. Astrobiology); CMU/GSA Haughton lunar study."
+Axel Heiberg Island,79.75,-91.0,Mars,ice_proxy,,150.0,"Coordinates: Wikipedia. Role (permafrost, cold springs): Preston & Dartnell 2014 (Int. J. Astrobiology)."
+"Bockfjorden, Svalbard (AMASE)",79.4317,13.305,Moon;Mars,ice_proxy,,30.0,"Coordinates: Wikipedia (Sverrefjellet). Role (permafrost, rock glaciers): Preston & Dartnell 2014 (Int. J. Astrobiology); Wikipedia analogue table (AMASE)."
+Qaidam Basin,37.2667,94.45,Mars,aridity|Topography,,250.0,"Coordinates: Wikipedia. Role (hyperarid, yardangs): Preston & Dartnell 2014 (Int. J. Astrobiology); Europlanet TA1; Meng et al. 2025 (arXiv 2501.08584)."
+Mojave Desert,35.0,-116.0,Mars,aridity|Topography,,200.0,"Coordinates: Wikipedia. Role (arid desert, rover testing): Preston & Dartnell 2014 (Int. J. Astrobiology); GSA Special Paper 483."
+Meteor Crater (Arizona),35.0281,-111.0233,Moon;Mars,,Topography,1.2,Coordinates: Wikipedia. Role: IAC 2021 Artemis geology training; Foucher et al. 2021.
+SP Crater (San Francisco volcanic field),35.5822,-111.6318,Moon,,Topography,2.0,Coordinates: Wikipedia. Role: NASA/USGS Artemis volcanic field sites (NTRS 20220013521).
+Kilbourne Hole (Potrillo volcanic field),31.9719,-106.9647,Moon,,Topography,3.0,Coordinates: Wikipedia. Role: NASA/USGS Artemis volcanic field sites (NTRS 20220013521).
+Mistastin crater (Labrador),55.8833,-63.3,Moon,,Topography,28.0,Coordinates: Wikipedia. Role: IAC 2021 Artemis capstone training; SpaceQ 2023.
+Nördlinger Ries,48.8833,10.5667,Moon,,Topography,24.0,Coordinates: Wikipedia. Role: ESA PANGAEA training.
+Askja caldera (Iceland),65.033,-16.783,Moon,,Topography,50.0,Coordinates: Wikipedia. Role: NASA Artemis Iceland training (NTRS 20220013521).
+Timanfaya (Lanzarote),28.9942,-13.7933,Moon;Mars,,Topography,15.0,Coordinates: Wikipedia. Role: ESA PANGAEA training.
+Rio Tinto,37.404,-6.3358,Mars,,,20.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role: Preston & Dartnell 2014 (Int. J. Astrobiology); Foucher et al. 2021.
+Mauna Kea (Hawaii),19.8206,-155.4681,Moon;Mars,,,40.0,Coordinates: Wikipedia. Role: Wikipedia analogue table.
+Kilauea (Hawaii),19.425,-155.2919,Moon;Mars,,,20.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role: Wikipedia analogue table.
+Mars Desert Research Station (Utah),38.4065,-110.7919,Moon;Mars,,,20.0,Coordinates: Wikipedia. Role: USGS Utah analogs.
+Death Valley,36.2469,-116.8169,Mars,,,100.0,Coordinates: Wikipedia. Role: weakly sourced.
+Danakil Depression,14.2417,40.3,Mars,,,100.0,Coordinates: Wikipedia. Role: Europlanet TA1.
+Concordia Station (Antarctica),-75.1,123.33,Moon;Mars,,,50.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role: human-factors analog (ESA).
+CHILL-ICE lava tube (Iceland),64.7869,-20.7144,Moon;Mars,,,5.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role: same.
+Mount Etna,37.755,14.995,Moon;Mars,,,40.0,Coordinates: Wikipedia. Role: Foucher et al. 2021.
+Teide (Tenerife),28.2731,-16.6394,Moon;Mars,,,20.0,Coordinates: Wikipedia. Role: Foucher et al. 2021.
+Sudbury Basin,46.6,-81.1833,Moon;Mars,,,60.0,Coordinates: Wikipedia 'Terrestrial analogue site' table. Role: same.
+Kangerlussuaq (Greenland),67.0086,-50.6892,Mars,,,50.0,Coordinates: Wikipedia. Role: Europlanet TA1.
+"Ladakh (Tso Kar, Puga)",33.3,77.983,Mars,,,50.0,"Coordinates: Wikipedia (Tso Kar). Role (high-altitude cold desert, brines, permafrost): Pandey et al. 2020, Int. J. Astrobiology 19(1), 78-98."
+Lake Salda (Turkey),37.55,29.683,Mars,,,10.0,"Coordinates: Wikipedia. Role (carbonates and delta deposits like Jezero's): NASA Earth Observatory, 17 Feb 2021; Horgan et al. (Purdue) field work 2019."

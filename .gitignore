@@ -1,0 +1,20 @@
+# Virtual environment
+venv/
+
+# Data: only the app's dataset (data/processed/real_v1, ~16 MB) is versioned; raw downloads (data/raw) and
+# caches stay local (the pipeline rebuilds them).
+data/*
+!data/processed/
+data/processed/*
+!data/processed/real_v1/
+!data/*/.gitkeep
+
+# Python and tool caches
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Local editor settings
+.vscode/
+.idea/

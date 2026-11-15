@@ -1,0 +1,128 @@
+{
+  "source": "real",
+  "version": 1,
+  "n_tiles": 23039,
+  "sample_limit": null,
+  "created": "2026-11-14T16:13:11+00:00",
+  "resolution_note": "Earth tiles of 1 x 1 deg, weighted by their land area; topography at a common ~463 m pixel on every world; Earth climate on the NASA POWER grids (0.5 x 0.625 deg and 1 deg), 12 months.",
+  "sources": {
+    "Earth topography": "Copernicus DEM GLO-90 (ESA), AWS open data",
+    "Earth climate": "NASA POWER climatology (MERRA-2, CERES SYN1deg), AWS open data",
+    "Earth bare ground": "ESA WorldCover 10 m 2021 north of 60 S; SCAR Antarctic Digital Database rock outcrop v7.11 south of it (both CC BY 4.0)",
+    "Moon": "NASA PDS: LRO LOLA, LRO Diviner; NASA PGDA illumination",
+    "Mars": "NASA PDS: MGS MOLA; Mars Climate Database v6.2 (LMD, with ESA and CNES)"
+  },
+  "target_sources": {
+    "moon_shackleton": {
+      "slope_deg": "LRO LOLA polar DEM, 240 m (PDS)",
+      "roughness_m": "LRO LOLA polar DEM, 240 m (PDS)",
+      "diurnal_amp_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "temp_min_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "aridity": "Physics: no liquid water can exist at the surface (vacuum).",
+      "ice_proxy": "Physics: subsurface temperatures stay far below 273 K all year (Diviner, Vasavada et al. 2012).",
+      "bare_frac": "Physics: no vegetation and no snow cover; the surface is regolith and rock (ice in polar cold traps is buried or a trace frost, not a ground cover).",
+      "insolation_wm2": "Computed: horizon method on LRO LOLA topography",
+      "sunlit_frac": "NASA PGDA average illumination map (Mazarico et al. 2011), 120 m; our horizon method on LOLA agrees within W1 = 0.017",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 1.54 deg), smooth sphere, terrain shadows not included"
+    },
+    "moon_malapert": {
+      "slope_deg": "LRO LOLA polar DEM, 240 m (PDS)",
+      "roughness_m": "LRO LOLA polar DEM, 240 m (PDS)",
+      "diurnal_amp_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "temp_min_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "aridity": "Physics: no liquid water can exist at the surface (vacuum).",
+      "ice_proxy": "Physics: subsurface temperatures stay far below 273 K all year (Diviner, Vasavada et al. 2012).",
+      "bare_frac": "Physics: no vegetation and no snow cover; the surface is regolith and rock (ice in polar cold traps is buried or a trace frost, not a ground cover).",
+      "insolation_wm2": "Computed: horizon method on LRO LOLA topography",
+      "sunlit_frac": "NASA PGDA average illumination map (Mazarico et al. 2011), 120 m; our horizon method on LOLA agrees within W1 = 0.012",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 1.54 deg), smooth sphere, terrain shadows not included"
+    },
+    "moon_mare_tranq_pit": {
+      "slope_deg": "LRO LOLA LDEM_64, ~474 m (PDS)",
+      "roughness_m": "LRO LOLA LDEM_64, ~474 m (PDS)",
+      "diurnal_amp_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "temp_min_k": "LRO Diviner Global Cumulative Product, Tbol (PDS)",
+      "aridity": "Physics: no liquid water can exist at the surface (vacuum).",
+      "ice_proxy": "Physics: subsurface temperatures stay far below 273 K all year (Diviner, Vasavada et al. 2012).",
+      "bare_frac": "Physics: no vegetation and no snow cover; the surface is regolith and rock (ice in polar cold traps is buried or a trace frost, not a ground cover).",
+      "insolation_wm2": "Computed: orbit and obliquity",
+      "sunlit_frac": "Computed: astronomical daylight fraction",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 1.54 deg), smooth sphere, terrain shadows not included"
+    },
+    "mars_jezero": {
+      "slope_deg": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "roughness_m": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "diurnal_amp_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 65-100 K (Perseverance MEDA ground temperature (2021-2023), approximate.); model range over the year 75-95 K.",
+      "temp_min_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 175-200 K (Perseverance MEDA ground temperature (2021-2023), approximate.); model range over the year 186-195 K.",
+      "aridity": "Physics: no stable liquid water at the surface (pressure near the triple point).",
+      "ice_proxy": "Physics: mean annual ground temperature below 240 K at all latitudes.",
+      "bare_frac": "Physics: no vegetation; regolith and rock at the surface of the targets (thin seasonal frost is not a permanent cover, as in Earth land-cover maps).",
+      "insolation_wm2": "Computed: orbit and obliquity, atmospheric transmission 0.75",
+      "sunlit_frac": "Computed: astronomical daylight fraction, no clouds",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 25.19 deg), smooth sphere, terrain shadows not included"
+    },
+    "mars_gale": {
+      "slope_deg": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "roughness_m": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "diurnal_amp_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 55-95 K (Curiosity REMS ground temperature (Martinez et al. 2017), approximate.); model range over the year 78-104 K.",
+      "temp_min_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 178-205 K (Curiosity REMS ground temperature (Martinez et al. 2017), approximate.); model range over the year 179-194 K.",
+      "aridity": "Physics: no stable liquid water at the surface (pressure near the triple point).",
+      "ice_proxy": "Physics: mean annual ground temperature below 240 K at all latitudes.",
+      "bare_frac": "Physics: no vegetation; regolith and rock at the surface of the targets (thin seasonal frost is not a permanent cover, as in Earth land-cover maps).",
+      "insolation_wm2": "Computed: orbit and obliquity, atmospheric transmission 0.75",
+      "sunlit_frac": "Computed: astronomical daylight fraction, no clouds",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 25.19 deg), smooth sphere, terrain shadows not included"
+    },
+    "mars_arcadia": {
+      "slope_deg": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "roughness_m": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "diurnal_amp_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 35-70 K (Viking Lander 2 at 48 N as latitude analogue; CO2 frost point ~148 K, approximate.); model range over the year 37-91 K.",
+      "temp_min_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times. In-situ control: 148-195 K (Viking Lander 2 at 48 N as latitude analogue; CO2 frost point ~148 K, approximate.); model range over the year 154-185 K.",
+      "aridity": "Physics: no stable liquid water at the surface (pressure near the triple point).",
+      "ice_proxy": "Physics: mean annual ground temperature below 240 K at all latitudes.",
+      "bare_frac": "Physics: no vegetation; regolith and rock at the surface of the targets (thin seasonal frost is not a permanent cover, as in Earth land-cover maps).",
+      "insolation_wm2": "Computed: orbit and obliquity, atmospheric transmission 0.75",
+      "sunlit_frac": "Computed: astronomical daylight fraction, no clouds",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 25.19 deg), smooth sphere, terrain shadows not included"
+    },
+    "mars_oxia": {
+      "slope_deg": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "roughness_m": "MGS MOLA MEGDR 128 ppd, ~463 m (PDS)",
+      "diurnal_amp_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times.",
+      "temp_min_k": "Mars Climate Database v6.2 (c) LMD/OU/IAA/ESA/CNES, web interface, climatology scenario with average solar EUV, high-resolution mode: surface temperature at the target centre, 12 seasons x 24 local times.",
+      "aridity": "Physics: no stable liquid water at the surface (pressure near the triple point).",
+      "ice_proxy": "Physics: mean annual ground temperature below 240 K at all latitudes.",
+      "bare_frac": "Physics: no vegetation; regolith and rock at the surface of the targets (thin seasonal frost is not a permanent cover, as in Earth land-cover maps).",
+      "insolation_wm2": "Computed: orbit and obliquity, atmospheric transmission 0.75",
+      "sunlit_frac": "Computed: astronomical daylight fraction, no clouds",
+      "sun_elevation_deg": "Computed: astronomy (latitudes of the window, axial tilt 25.19 deg), smooth sphere, terrain shadows not included"
+    }
+  },
+  "zoom": {
+    "tiles": 115,
+    "block_px": 24,
+    "pixel_m": 463.0,
+    "note": "Sub-areas of about 11 km inside the sites shown with the default settings of each mission profile; same DEM, pixel and operators as the screening; climate stays at tile scale."
+  },
+  "subsurface": {
+    "sites": 21,
+    "note": "Lava-tube case studies; temperature = annual mean of the NASA POWER cell."
+  },
+  "variables": [
+    "slope_deg",
+    "roughness_m",
+    "diurnal_amp_k",
+    "temp_min_k",
+    "aridity",
+    "ice_proxy",
+    "insolation_wm2",
+    "sunlit_frac",
+    "sun_elevation_deg",
+    "bare_frac"
+  ],
+  "targets_rebuilt": "2026-11-14T16:18:51+00:00",
+  "places": {
+    "source": "Natural Earth v5.1.2 (public domain), naturalearthdata.com",
+    "note": "Country and named physical region of each tile centre; display only, never part of the score. Country lines are Natural Earth's de facto boundaries; no country is given in the areas it lists as disputed."
+  }
+}

@@ -1,0 +1,5 @@
+# Development: tests, lint and construction of the dataset (rasterio reads the elevation models and COGs).
+-r requirements.txt
+pytest==9.2.0
+rasterio==1.5.2
+ruff==0.17.5

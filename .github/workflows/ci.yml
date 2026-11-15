@@ -1,0 +1,29 @@
+# Lint and tests on every push and pull request, on the development Python (3.15) and on the default
+# Python of Streamlit Community Cloud (3.12), where the app is deployed. Tests use a small synthetic dataset
+# (tests/synthetic.py) and the real one versioned in the repository: no network needed.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.15"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Lint
+        run: python -m ruff check .
+      - name: Tests
+        run: python -m pytest -q
