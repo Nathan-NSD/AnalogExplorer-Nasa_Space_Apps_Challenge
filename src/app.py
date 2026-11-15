@@ -561,7 +561,7 @@ def page_target(ctx: Context, c: dict) -> None:
                        "(hypothesis to back with references)")
         else:
             for dim in config.DIMENSIONS:
-                c["expert"][dim] = st.slider(f"{dim} weight", 0.0, 1.0, float(c["expert"].get(dim, 0.5)), 0.05)
+                c["expert"][dim] = st.slider(f"{dim} weight", 0.0, 1.0, float(c["expert"].get(dim, 0.5)), 0.01)
             if sum(c["expert"].values()) <= 0:
                 st.warning("All weights are zero: equal weights are used instead.")
     reset_site_on_new_question(c)
