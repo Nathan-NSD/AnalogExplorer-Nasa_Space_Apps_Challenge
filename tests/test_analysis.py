@@ -36,6 +36,18 @@ def test_scoring_mask_drops_unmeasured_and_unreachable():
     assert analysis.scoring_mask(q, nothing).tolist() == me.available_variables(q).tolist()   # fallback: measured
 
 
+def test_weights_fall_back_when_no_weighted_dimension_can_be_scored():
+    """Expert weights on Thermal alone, with both thermal variables out of Earth's range (a Moon target): the
+    engine uses equal weights on the usable variables, and the app must warn (bug found on 15 Nov 2026)."""
+    mask = np.array([d != "Thermal" for d in config.VAR_DIMENSIONS])
+    thermal_only = {d: (1.0 if d == "Thermal" else 0.0) for d in config.DIMENSIONS}
+    assert analysis.weights_fall_back(thermal_only, mask)
+    w = me.variable_weights_from_dimensions(thermal_only, config.VAR_DIMENSIONS, mask)
+    assert np.allclose(w[mask], 1 / mask.sum()) and not w[~mask].any()       # what the warning describes
+    assert not analysis.weights_fall_back({**thermal_only, "Topography": 0.2}, mask)
+    assert not analysis.weights_fall_back(thermal_only, np.ones(len(mask), dtype=bool))
+
+
 def test_analyse_target_matches_the_engine_primitives(ctx):
     dim_w = analysis.mission_dimension_weights("Rover Mobility")
     a = analysis.analyse_target(ctx, 0, dim_w)

@@ -74,6 +74,15 @@ def scoring_mask(q_target: np.ndarray, reach: me.Reachability) -> np.ndarray:
     return mask if mask.any() else available
 
 
+def weights_fall_back(dim_weights: Mapping[str, float], mask: np.ndarray) -> bool:
+    """True when no weighted dimension keeps a variable in the score (`mask`, see scoring_mask): the variable
+    weights then fall back to equal weights on every usable variable (math_engine.variable_weights_from_dimensions),
+    which the app must say. Example: expert weights on Thermal alone for a Moon target, whose two thermal
+    variables are out of Earth's range."""
+    usable = {d for d, ok in zip(config.VAR_DIMENSIONS, mask, strict=True) if ok}
+    return not any(w > 0 and d in usable for d, w in dim_weights.items())
+
+
 @dataclass(frozen=True)
 class TargetAnalysis:
     w1: np.ndarray            # (n, K) distances of every tile to the target

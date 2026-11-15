@@ -113,7 +113,7 @@ def test_subsurface_table_orders_by_temperature_gap():
     table = report.subsurface_table(sites, 290.0, np.array([0.5, np.nan, 0.01]), np.array([True, False, True]))
     assert table["Lava-tube field"].tolist() == ["close", "hot", "cold"]
     assert table[report.SUBSURFACE_GAP].tolist() == [1.5, 10.0, -20.0]
-    assert np.isnan(table["Surface match (top % of Earth tiles)"].iloc[0]) and table["Under-studied"].tolist() == [
+    assert np.isnan(table["Surface match (top % of Earth's land)"].iloc[0]) and table["Under-studied"].tolist() == [
         False, True, True]
     assert "NASA Worldview" in report.subsurface_table(sites, 290.0).columns
 

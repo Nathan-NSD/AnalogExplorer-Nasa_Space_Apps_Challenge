@@ -569,6 +569,9 @@ def page_target(ctx: Context, c: dict) -> None:
     t = active_target(c, ctx)
     available = target_available(ctx, t)
     w = current_weights(c, scoring_mask(ctx, t))
+    if analysis.weights_fall_back(current_dimension_weights(c), scoring_mask(ctx, t)):
+        st.warning("None of the weighted dimensions can be scored for this target (no data, or out of Earth's "
+                   "range): equal weights on the usable variables are used instead.")
     status = np.where(~available, "not evaluated",
                       np.where(get_reachability(t).reachable, "measured", "out of Earth's range"))
     st.subheader("Resulting variable weights")

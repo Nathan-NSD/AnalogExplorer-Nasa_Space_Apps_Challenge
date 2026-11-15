@@ -323,7 +323,7 @@ def subsurface_table(sites: pd.DataFrame, target_temp_k: float, top_frac: np.nda
         SUBSURFACE_GAP: np.round(gap, 1),
     }
     if top_frac is not None:
-        data["Surface match (top % of Earth tiles)"] = np.round(100 * np.asarray(top_frac, dtype=float), 1)
+        data["Surface match (top % of Earth's land)"] = np.round(100 * np.asarray(top_frac, dtype=float), 1)
     if understudied is not None:
         data["Under-studied"] = np.asarray(understudied, dtype=bool)
     data["NASA Worldview"] = [worldview_url(lat, lon) for lat, lon in zip(sites["lat"], sites["lon"], strict=True)]
@@ -422,7 +422,8 @@ def lighting_calendar_table(similarity: np.ndarray) -> pd.DataFrame:
 
 
 def lighting_calendar_sentence(similarity: np.ndarray, top: int = 3) -> str | None:
-    """'Lighting closest to the target in Mar, Sep, Oct (similarity 0.71 to 0.80)'; None without any profile."""
+    """'The Sun's elevation is closest to the target's in Mar, Sep, Oct (similarity 0.71 to 0.80...)'; None without
+    any profile."""
     from src.data_prep import MONTHS
 
     sims = np.asarray(similarity, dtype=float)
@@ -430,8 +431,8 @@ def lighting_calendar_sentence(similarity: np.ndarray, top: int = 3) -> str | No
     if lit.size == 0:
         return None
     best = np.sort(lit[np.argsort(-sims[lit], kind="stable")][:top])
-    text = (f"The Sun stands most like on the target in {', '.join(MONTHS[m] for m in best)} (similarity of its "
-            f"elevation {sims[best].min():.2f} to {sims[best].max():.2f}; over the whole year the months range from "
+    text = (f"The Sun's elevation is closest to the target's in {', '.join(MONTHS[m] for m in best)} (similarity "
+            f"{sims[best].min():.2f} to {sims[best].max():.2f}; over the whole year the months range from "
             f"{sims[lit].min():.2f} to {sims[lit].max():.2f})")
     dark = 12 - lit.size
     return text + (f"; the Sun does not rise during {dark} months." if dark else ".")
