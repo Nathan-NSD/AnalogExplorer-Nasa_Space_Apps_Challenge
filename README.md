@@ -2,12 +2,14 @@
 
 **Where on Earth to rehearse the Moon and Mars, dimension by dimension, and what Earth cannot reproduce.**
 
-NASA Space Apps Challenge 2026 — challenge *Identify Earth Locations that Analog the Permanent Moon Base Locations
-and Mars*.
+Built for the NASA Space Apps Challenge 2026, challenge *Identify Earth Locations that Analog the Permanent Moon
+Base Locations and Mars*.
 
-- **Live app:** https://aex-spaceapps.streamlit.app/
-- **Method:** [docs/method.md](docs/method.md) · **Data and licences:** [docs/data.md](docs/data.md) ·
-  **Written field atlas:** [docs/atlas.md](docs/atlas.md)
+- **Live app:** https://aex-spaceapps.streamlit.app/ (if it shows a "wake up" screen after a quiet period, click
+  the button and wait about a minute)
+- **Method:** [docs/method.md](docs/method.md)
+- **Data and licences:** [docs/data.md](docs/data.md)
+- **Written field atlas:** [docs/atlas.md](docs/atlas.md)
 
 ## What it does
 
@@ -38,7 +40,7 @@ places on Earth. Variables that no place on Earth can match leave the score and 
 score is a weighted geometric mean, so a good result on one dimension cannot hide a poor one. Full description,
 formulas and references: [docs/method.md](docs/method.md); the app's home page shows the same steps.
 
-## Results, stated honestly
+## Results and limits
 
 - No place on Earth reproduces the lunar day-night temperature amplitude or minimum temperature, nor the
   diurnal amplitude of Mars: these conditions are reported, not ranked.
@@ -76,7 +78,7 @@ python -m pytest -q
 python -m ruff check .
 ```
 
-Rebuild the dataset from the open sources (about one hour the first time, no account needed; Python ≥ 3.14):
+Rebuild the dataset from the open sources (about one hour the first time, no account needed; Python 3.14 or later):
 
 ```bash
 python -m src.data_prep --real
@@ -113,4 +115,4 @@ sheets and written atlas are computed by explicit rules from open data.
 
 Code: [MIT](LICENSE). Data keep their own licences and attributions, listed in [docs/data.md](docs/data.md).
 
-AnalogExplorer team — NASA Space Apps Challenge 2026.
+AnalogExplorer team, NASA Space Apps Challenge 2026.

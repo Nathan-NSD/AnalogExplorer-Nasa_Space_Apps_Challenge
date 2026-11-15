@@ -107,7 +107,10 @@ The raw score is never shown alone. Each site comes with:
 
 Every share of the Earth is a share of land area, not a count of tiles, so the many narrow tiles near the poles
 do not weigh more than their surface. A variable or dimension is a **strong match** when the site is closer to
-the target than 75 % of Earth pairs, a **partial match** above 50 %, a **weak match** otherwise.
+the target than 75 % of Earth pairs, a **partial match** above 50 %, a **weak match** otherwise. For bare ground
+and frozen ground, where many pairs of places are identical, the site's gap is first divided by the share of pairs
+that differ, so that the status uses the same unit as the score: a site one tolerance away from the target reads
+50 %. Frozen ground is almost binary, so it has no real partial zone.
 
 ## 5. Robustness
 
@@ -169,14 +172,14 @@ question: which world does a given place on Earth resemble?
 
 ## References
 
-- Barron, F. H. & Barrett, B. E. 1996 — rank-order centroid weights.
-- Foucher, F. et al. 2021 — functional analogs in planetary exploration.
-- Holm, S. 1979 — sequentially rejective multiple test procedure.
-- Huber, P. J. 1964 — robust estimation, Huber loss.
-- Mazarico, E. et al. 2011 — illumination conditions of the lunar polar regions (LOLA).
-- Nemhauser, G. L., Wolsey, L. A. & Fisher, M. L. 1978 — approximations for maximizing submodular functions.
-- OECD / JRC 2008 — Handbook on Constructing Composite Indicators.
-- Preston, L. J. & Dartnell, L. R. 2014 — planetary habitability and terrestrial analogues.
-- Williams, J. W. et al. 2007 — novel and disappearing climates (no-analog conditions).
+- Barron, F. H. & Barrett, B. E. 1996 - rank-order centroid weights.
+- Foucher, F. et al. 2021 - functional analogs in planetary exploration.
+- Holm, S. 1979 - sequentially rejective multiple test procedure.
+- Huber, P. J. 1964 - robust estimation, Huber loss.
+- Mazarico, E. et al. 2011 - illumination conditions of the lunar polar regions (LOLA).
+- Nemhauser, G. L., Wolsey, L. A. & Fisher, M. L. 1978 - approximations for maximizing submodular functions.
+- OECD / JRC 2008 - Handbook on Constructing Composite Indicators.
+- Preston, L. J. & Dartnell, L. R. 2014 - planetary habitability and terrestrial analogues.
+- Williams, J. W. et al. 2007 - novel and disappearing climates (no-analog conditions).
 
 Data references (LOLA, Diviner, MOLA, WorldCover, SCAR, Mars Climate Database, Natural Earth): [data.md](data.md) §2.

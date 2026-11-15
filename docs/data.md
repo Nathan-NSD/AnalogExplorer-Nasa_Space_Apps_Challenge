@@ -12,12 +12,12 @@ example, there is no liquid water and no vegetation on the Moon); its source is 
 | Variable | Earth (tiles) | Moon (targets) | Mars (targets) |
 |---|---|---|---|
 | Slope, roughness | Copernicus DEM GLO-90 resampled to ~463 m, water masked (water body mask) | LRO LOLA: 240 m polar DEM, LDEM_64 (~474 m) | MGS MOLA MEGDR 128 pixels per degree (~463 m) |
-| Diurnal temperature amplitude | NASA POWER 2 × `TS_AMP` (mean daily maximum − mean daily minimum) | LRO Diviner Global Cumulative Products: max − min of bolometric temperature | Mars Climate Database v6.2: max − min of the diurnal cycle of surface temperature, 12 seasons |
+| Diurnal temperature amplitude | NASA POWER 2 × `TS_AMP` (mean daily maximum - mean daily minimum) | LRO Diviner Global Cumulative Products: max - min of bolometric temperature | Mars Climate Database v6.2: max - min of the diurnal cycle of surface temperature, 12 seasons |
 | Minimum temperature | NASA POWER `TS_MIN_AVG` (mean daily minimum of surface temperature, the counterpart of the minimum of the targets' mean cycle) | LRO Diviner: minimum of bolometric temperature | Mars Climate Database: coldest hour of the cycle |
-| Aridity | 1 − min(P/PET, 1) (UNEP aridity index), P = `PRECTOTCORR`, PET from Hargreaves; months above 0 °C; 1 when water is never liquid | 1 (physics) | 1 (physics) |
+| Aridity | 1 - min(P/PET, 1) (UNEP aridity index), P = `PRECTOTCORR`, PET from Hargreaves; months above 0 °C; 1 when water is never liquid | 1 (physics) | 1 (physics) |
 | Ground below 0 °C at depth (thermal permafrost: a temperature, not a proof of ice) | share of months with the soil at 3-10 m below 0 °C (`TSOIL6`) | 1 (physics) | 1 (physics) |
 | Mean insolation (W/m², horizontal) | NASA POWER `ALLSKY_SFC_SW_DWN` | orbit (equator); LOLA horizons (poles) | orbit × atmospheric transmission 0.75 |
-| Sunlit fraction | astronomical day length × (1 − `CLOUD_AMT_DAY`) | 0.5 (equator); NASA PGDA illumination map (poles) | astronomical day length (no clouds) |
+| Sunlit fraction | astronomical day length × (1 - `CLOUD_AMT_DAY`) | 0.5 (equator); NASA PGDA illumination map (poles) | astronomical day length (no clouds) |
 | Sun elevation in daytime | astronomy: latitude of the tile centre, obliquity 23.44°, orbit; no relief, no clouds | astronomy: latitudes of the target window, obliquity 1.54° | astronomy: latitudes of the window, obliquity 25.19°, seasons weighted by their length |
 | Bare ground | share of each ~463 m pixel without vegetation, snow or ice: ESA WorldCover 10 m (class 60) north of 60°S, SCAR rock outcrops south of it; 25 samples per pixel, water excluded | 1 (physics) | 1 (physics) |
 
@@ -114,7 +114,7 @@ The similarities to a target are computed when the dataset is loaded (one matrix
 ## 6. Reproducibility
 
 - Pinned versions in `requirements.txt` (app) and `requirements-dev.txt` (tests, lint, offline pipeline).
-  Python ≥ 3.12 for the app; ≥ 3.14 to rebuild the dataset (the NASA POWER reader uses `compression.zstd`).
+  Python 3.12 or later for the app; 3.14 or later to rebuild the dataset (the NASA POWER reader uses `compression.zstd`).
 - Fixed seeds: tolerances, robustness, score interval and credibility check (`seed=0`); synthetic test
   dataset (`42`).
 - `meta.json` dates each dataset and traces the provenance of every target value.
