@@ -101,6 +101,14 @@ python -m src.data_prep --real
 └── docs/                # method, data and written atlas
 ```
 
+## Use of AI
+
+This project was built with the help of an AI assistant, used for debugging and testing, for documentation and translation, for searching the
+literature and data sources, and for helping design the demo slide. The idea, the scientific
+method and its choices, and the validation of every result are the team's. The application
+itself contains no machine learning or language model: its rankings, limits report, site
+sheets and written atlas are computed by explicit rules from open data.
+
 ## Licence
 
 Code: [MIT](LICENSE). Data keep their own licences and attributions, listed in [docs/data.md](docs/data.md).
