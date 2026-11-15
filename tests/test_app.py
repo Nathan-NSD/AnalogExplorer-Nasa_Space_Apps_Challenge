@@ -137,3 +137,21 @@ def test_new_deployed_version_clears_the_caches(fresh_caches, monkeypatch, tmp_p
     (tmp_path / "places.csv").write_text("tile,place\n")             # a new version is deployed
     at.run()
     assert not at.exception and len(builds) == 2                     # caches cleared, context rebuilt
+
+
+def test_stale_src_modules_are_unloaded(monkeypatch):
+    """Streamlit Cloud may rerun a new app.py with the previous version of the other `src` modules still loaded
+    (15 Nov 2026: AttributeError on analysis.weights_fall_back): they are unloaded so the new code is imported."""
+    import sys
+
+    import src
+    from src import app
+    saved = {n: m for n, m in sys.modules.items() if n == "src" or n.startswith("src.")}
+    try:
+        assert not app.drop_stale_src_modules()                       # same source files: modules kept
+        monkeypatch.setattr(src, "LOADED_VERSION", ())                # loaded from other files than on disk
+        assert app.drop_stale_src_modules()
+        assert "src.analysis" not in sys.modules and "src" not in sys.modules
+        assert "src.app" in sys.modules                               # the running page is never unloaded
+    finally:
+        sys.modules.update(saved)

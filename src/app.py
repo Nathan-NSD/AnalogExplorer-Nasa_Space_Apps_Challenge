@@ -21,11 +21,29 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:  # lets `streamlit run src/app.py` import the `src` package
     sys.path.insert(0, str(ROOT))
 
+
+def drop_stale_src_modules() -> bool:
+    """Streamlit Community Cloud reruns the new app.py of a commit but may keep the previous version of the
+    other `src` modules in sys.modules (15 Nov 2026: AttributeError on analysis.weights_fall_back, added by
+    that commit). If the loaded `src` package comes from other source files than those on disk (or from a version
+    that did not record it), unload all its modules (they import each other) so the imports below read the new
+    code. True if it did."""
+    pkg = sys.modules.get("src")
+    if pkg is None or (hasattr(pkg, "source_version")
+                       and getattr(pkg, "LOADED_VERSION", None) == pkg.source_version()):
+        return False
+    for name in [n for n in sys.modules if (n == "src" or n.startswith("src.")) and n != "src.app"]:
+        del sys.modules[name]
+    return True
+
+
+drop_stale_src_modules()
+
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from src import analysis, charts, config, data_prep, report  # noqa: E402
+from src import analysis, charts, config, data_prep, report, source_version  # noqa: E402
 from src import math_engine as me  # noqa: E402
 from src.analysis import Context  # noqa: E402
 
@@ -73,11 +91,9 @@ SIMILARITY_BAR = st.column_config.ProgressColumn("Similarity", min_value=0.0, ma
 # ================================================================= data & caches
 def deployed_version() -> tuple:
     """(name, size, mtime) of the code and dataset files: changes whenever a new version is deployed."""
-    files = sorted(Path(__file__).resolve().parent.glob("*.py"))
     folder = data_prep.find_dataset_dir()
-    if folder is not None:
-        files += sorted(p for p in Path(folder).iterdir() if p.is_file())
-    return tuple((p.name, p.stat().st_size, p.stat().st_mtime_ns) for p in files)
+    files = sorted(p for p in Path(folder).iterdir() if p.is_file()) if folder is not None else []
+    return source_version() + tuple((p.name, p.stat().st_size, p.stat().st_mtime_ns) for p in files)
 
 
 @st.cache_resource
